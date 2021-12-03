@@ -1,5 +1,5 @@
 module Y2021.Day1
-    ( day1Input
+    ( input
     , problem1
     , problem2
     ) where
@@ -7,8 +7,8 @@ module Y2021.Day1
 zipWithSelf :: (a -> a -> b) -> [a] -> [b]
 zipWithSelf f xs = zipWith f xs $ tail xs
 
-day1Input :: FilePath -> IO [Int]
-day1Input = fmap (map read . lines) . readFile
+input :: FilePath -> IO [Int]
+input = fmap (map read . lines) . readFile
 
 problem1 :: [Int] -> Int
 problem1 = length . filter (== LT) . zipWithSelf compare
